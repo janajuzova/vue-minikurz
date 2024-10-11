@@ -1,0 +1,58 @@
+//prerekvizity
+//dependency manager NPM (tento program je dodavany spolecne s Node.js)
+// v php byl dependency manger Composer (ten tady nepotrbeujeme)
+
+//mac si muze nodejs naistalovat pres homebrew
+# brew install node
+
+//stahneme si a nainstalujeme nodejs
+//https://nodejs.org/en
+
+//kdyz vas to vyzve k tomu jestli chcete nainstalovat dodatecne tooly, tak rekene ne.
+
+//overeni zda npm funguje
+//cislo verze
+# npm -v
+
+//vue dokumentace
+https://vuejs.org/
+https://cs.vuejs.org/
+
+//nyni muzeme vytvorit vue projekt
+//otevreme terminal ve slozce kam chceme projekt vytvorit
+# npm create vue@latest zoo
+
+//prikazova radka se zepta zda knihovnu chceme opravdu stahnout
+// v zavorce uvidite (y)
+//odentrujte to nebo napiste y a pak to od entrujte
+
+//terminal se nad obcas zepta na volbu
+(n/Y) - uz je predvybrane Y ale muzeme rict n, kdyz chcete Y tka staci dat enter
+(y) - program vam dal jen 1 volbu, napiste y nebo jen dejte enter
+(n/y) - program po vas chce odpoved musite explicitne napsat y nebo n
+
+
+//nyni ze dobrazi dotaznicek
+//my budem echit zacit uplne od 0, takze na vsehcno odpovezte NO
+//po vytvoreni projektu nas to vyzve ke spusteni techto tri prikazu
+//1) cd zoo - presune pozici terminalu ze slozky vue-minikurz do slozky zoo
+//2) npm install - tneto prikaz dostahuje vsechny dalsi knihovny/dependence. Stejny prikaz jsme pouzivali v composeru (composer install), ktery nam dostahoval knihovny do vendor slozky. NPM misto vendor slozky ma slozku node_modules.
+//3) npm run dev - toto nam spusti projekt s vlastnim localhostem (vue nespoleha na xampp ani mamp, ma vlastni localhost)
+
+Done. Now run:
+  cd zoo
+  npm install
+  npm run dev
+
+//spusti se nam loaclni server: http://localhost:5173/
+
+//PAMATUJTE!!!
+//to co vidite na adrese localhost jeste neni hotovy produkt
+//aplikace bezi a vypada jako finalni produkt, ale jeji vnitrni mechanismy jeste nejsou doladene pro spusteni
+//abychom aplikaci pripravili pro spusteni, tak je potreba spustit prikaz 
+# npm run build
+
+//tento prikaz vezme vsechny soubory VUE projektu a vytvori z toho HTML, CSS, JS
+
+//koukneme se ted na ten finalni produkt
+# npm run preview
