@@ -1,6 +1,7 @@
 //prerekvizity
 //dependency manager NPM (tento program je dodavany spolecne s Node.js)
 // v php byl dependency manger Composer (ten tady nepotrbeujeme)
+//doporucuji nainstalovat do VSC rozsireni VUE official
 
 //mac si muze nodejs naistalovat pres homebrew
 # brew install node
@@ -56,3 +57,80 @@ Done. Now run:
 
 //koukneme se ted na ten finalni produkt
 # npm run preview
+//spusti se nam loaclni server: http://localhost:4173/
+
+//my budeme vetsinu casu pouzivat: http://localhost:5173/
+
+//proc pouzivta frameworky?
+//1) Stranka je zalozne na komponentach. Je mozne tedy aplikaci jednoduce upravoat a rozsirovat. navi ma kazada komponenta vlasnti JS a CSS. Kod je pak prehledny a modularni.
+//2) Framework provadi ruzne optimalizacni operace. (spojuje souboury do 1, minifukuje kod, nezahrne nepouzite soubory)
+//3) Kod je reaktivni. HTML je propojene s nejakou JS promennou a kdykoliv kdy se promenna zmeni, tak to HTML na to zareaguje a prekresli se. Ve vanille jsme to museli delat manualne skrze document.querySelector a innerHTML.
+
+//cela aplikace se spousti skrze soubor index.html
+//RACT a VUE jsou single page aplikace (SPA)
+
+//SPA ma nevyhodu: SEO ho nedokaze prozkoumat
+
+//SPA -> SSR (SERVER SIDE RENDERING) dokaze prvni stranku vygenerovat na serveru, aby SEO melo co cist
+
+//vsechny vase kody budou ve slozce source
+//v src jsou 2 korenove soubory
+//App.vue
+//main.js
+
+//vue pouziva SINGLE FILE components
+//ve frameworcich se obecne komponente sklada ze 3 souboru: script, html a CSS
+//vue je jediny ktery ty tri casti ma v 1 souboru (usnadnuje to praci, nemusite hledat 3 ruzne soubory)
+//SFC - se sklada z bloku script:setup, template, style:scoped
+
+//styly v componentach jsou scopovany
+//vue ma ale specialni soubor pro globalni styly
+// /assets/main.css
+
+//pojdme si nyni vytvorit nasi prvni komponentu
+//vsechny komponenty budeme vytvaret do slozky /src/components
+//Tony preferuje "flat" usporadani souboru: toto znamena, ze nebudeme komponenty organizovat do podslozek
+//nazvy komponent se snazte vzdy pojmenovat tak, aby mely alespon 2 slova
+
+//v korenove komponente App.vue musime komponent PocetNavstevniku naimportovat
+//po naimporovani komponenty muzeme komponentu vykreslit v bloku template jako obycejny HTML element
+// <PocetNavstevniku />
+
+//styly ktere jsou uvedene v komponente maji nevyssi prioritu
+
+//reaktivita
+//v template bloku muzeme pouzit dvojte chlupate zavorky {{ }}, kterym si rika interpolace/double mustache
+
+//poznamka: syntakticke chyb najdete v konozoli
+
+//abyhcom mohli vytovrit reaktivni promennou, tka je potreba pouzit funkci ref()
+//do funkce ref() se ulozi startovaci hodnota
+//vanilla JS tuto funkci nema, je to exkluzivni pro vue
+//exclusivni funkce musime naimportovat
+//import {ref} from "vue"
+
+//ukol: vytvorte komponetu ktera se bude jmenovat UkolOdpocitavadlo.vue, na obrazovce se objevi na azcatku cislo 10, pak s ezacne postupne odpocitavat a po doaszeni 0 se objevi misot cisla "Hotovo!"
+
+//krome ref() existuje i computed() promenna
+//computed promenna je zavisla na jinych reaktivnich proemnnych
+//kdykoliv se zmeni nejaka zavisla rekativni promenna, tak se prepocita i computed promenna
+
+//direktiva v-on nam na elemnt pripoji posluchace
+// v-on:click=""
+// do "" muzete psat JS operace
+// nebo do "" vlozite volani funkce
+// v-on:click="" ma zkraceny zapis @click=""
+
+//direktiva v-bind
+//v atributu elementu nemuzeme pouzit {{}}
+//pokud chceme mit dynamicky atribut, tak musime pouzit direktivu v-bind
+// v-bind:type="typInputu"
+//zkracene by to vypadala takhle
+// :type="typInputu"
+//pokud se jedna o atribut disabled, checked nebo selected (atributy, ktere jsou singlove bez hodnoty), tak se do "" dava booleanovska hodnota
+//pokud je boolean true, tak se atrbitu vypise jinak se vynecha
+// :disabled="booleanPromenna"
+
+//6 hodinovy tutorial na zakladni funkce Vue
+https://www.youtube.com/watch?v=I_xLMmNeLDY
+
