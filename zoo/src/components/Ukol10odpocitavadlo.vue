@@ -6,16 +6,14 @@ import {ref} from "vue"
 const cas = ref(10);
 
 const odpocet = intevalCas (() => {
-    cas.value--; 
-}, 1000);
-
-
-    if (cas < 0) {
-        console.log("Hotovo");
+    if (cas.value < 0) {
+        console.log(`${cas.value}`);
+        cas.value--;        
+    }else {
+        console.log("HOTOVO!");
         clearInterval(intevalCas);
-    }
-
-
+    }     
+}, 1000);
 </script>
 
 <template>

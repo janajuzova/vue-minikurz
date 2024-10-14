@@ -1,9 +1,10 @@
 <script setup>
 import PocetNavstevniku from './components/PocetNavstevniku.vue';
-//import Ukol10odpocitavadlo from './components/Ukol10odpocitavadlo.vue';
+import Ukol10odpocitavadlo from './components/Ukol10odpocitavadlo.vue';
 import ComputedPromenna from './components/ComputedPromenna.vue';
 import DirektivaOn from './components/DirektivaOn.vue';
 import DirektivaBind from './components/DirektivaBind.vue';
+import DirektivaShowIf from './components/DirektivaShowIf.vue';
 </script>
 
 
@@ -18,9 +19,9 @@ import DirektivaBind from './components/DirektivaBind.vue';
 
     <h2>Ukol 10 ODPOCITAVADLO</h2>
 
-    <!-- <div class="karta">
+    <div class="karta">
       <Ukol10odpocitavadlo />
-    </div> -->
+    </div> 
 
     <div class="karta">
       <ComputedPromenna />
@@ -32,6 +33,10 @@ import DirektivaBind from './components/DirektivaBind.vue';
 
     <div class="karta">
       <DirektivaBind />
+    </div>
+
+    <div class="karta">
+      <DirektivaShowIf />
     </div>
 
   </div>
