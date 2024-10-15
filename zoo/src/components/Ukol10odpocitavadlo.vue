@@ -5,13 +5,13 @@ import {ref} from "vue"
 
 const cas = ref(10);
 
-const odpocet = intevalCas (() => {
+const odpocet = setInterval (() => {
     if (cas.value < 0) {
         console.log(`${cas.value}`);
         cas.value--;        
     }else {
         console.log("HOTOVO!");
-        clearInterval(intevalCas);
+        clearInterval(odpocet);
     }     
 }, 1000);
 </script>
